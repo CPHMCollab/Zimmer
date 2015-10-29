@@ -1,19 +1,19 @@
 {
-   "person": {
-      "name": {
-         "first": "Eva",
-         "last": "Chen"
+   "Person": {
+      "Name": {
+         "First": "Eva",
+         "Last": "Chen"
       },
-      "email": "eschen@calpoly.edu",
+      "Email": "eschen@calpoly.edu",
       "Criteria": {
          "Gender": "Female",
-         "Major": "ENGR",
+         "Major": "CENG",
          "Religion": "None",
-         "Substances": "None",
-         "Noise": "None",
-         "Organizations": "",
-         "SleepTime": "Late",
-         "Cleanliness": "Yes"
+         "Substances": false,
+         "Noise": 0,
+         "Organizations": "Club",
+         "SleepTime": 0,
+         "Cleanliness": 0
        }
     }
 }
