@@ -9,7 +9,7 @@ public class Organizations implements Criteria
    
    public boolean equals(Object o)
    {
-      return o instanceof Organizations && (Organizations o).organizations.equals(this.organizations);
+      return o instanceof Organizations && ((Organizations)o).organizations.equals(this.organizations);
    }
    
    public String getValue()
