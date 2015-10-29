@@ -10,11 +10,11 @@ public class Person
    private Noise noise;
    private Cleanliness cleanliness;
    private Organizations organizations;
-   private SleepTimes sleepTimes;
+   private SleepTime sleepTime;
 
    /* [CONSTRUCTOR(s)] */
    public Person(String gender, String major, String religion, boolean substances, 
-    int noise, int cleanliness, String organizations, int sleepTimes)
+    int noise, int cleanliness, String organizations, int sleepTime)
    {
       this.gender = new Gender(gender);
       this.major = new Major(major);
@@ -23,7 +23,7 @@ public class Person
       this.noise = new Noise(noise);
       this.cleanliness = new Cleanliness(cleanliness);
       this.organizations = new Organizations(organizations);
-      this.sleepTimes = new sleepTimes(sleepTimes);
+      this.sleepTime = new SleepTime(sleepTime);
    }
 
    /* [METHODS] */
@@ -39,7 +39,7 @@ public class Person
           this.noise.equals(p.noise) &&
           this.cleanliness.equals(p.cleanliness) &&
           this.organizations.equals(p.organizations) &&
-          this.sleepTimes.equals(p.sleepTimes))
+          this.sleepTime.equals(p.sleepTime))
       {
          return true;
       }
