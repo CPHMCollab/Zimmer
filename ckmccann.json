@@ -1,0 +1,19 @@
+{
+   "Person": {
+      "Name": {
+         "First": "Colleen",
+         "Last": "McCann"
+      },
+      "Email": "ckmccann@calpoly.edu",
+      "Criteria": {
+         "Gender": "Female",
+         "Major": "COSAM",
+         "Religion": "None",
+         "Substances": true,
+         "Noise": 4,
+         "Organizations": "Club",
+         "SleepTime": 23,
+         "Cleanliness": 8
+       }
+    }
+}
