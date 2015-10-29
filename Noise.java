@@ -1,4 +1,4 @@
-public class Noise
+public class Noise implements Criteria
 {
    private int noise;
 
@@ -7,8 +7,13 @@ public class Noise
       this.noise = noise;
    }
    
-   public boolean equals(Noise n)
+   public boolean equals(Object n)
    {
-      return n.noise == this.noise ? true : false;
+      return n instanceof Noise && n.noise == this.noise ? true : false;
+   }
+   
+   public int getValue()
+   {
+      return noise;
    }
 }
