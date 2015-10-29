@@ -13,21 +13,21 @@ public class Person
    private SleepTimes sleepTimes;
 
    /* [CONSTRUCTOR(s)] */
-   public Person()
+   public Person(String gender, String major, String religion, boolean substances, 
+    int noise, int cleanliness, String organizations, int sleepTimes)
    {
-      this.gender = new Gender();
-      this.major = new Major();
-      this.religion = new Religion();
-      this.substances = new Substances();
-      this.noise = new Noise();
-      this.cleanliness = new Cleanliness();
-      this.organizations = new Organizations();
-      this.sleepTimes = new sleepTimes();
+      this.gender = new Gender(gender);
+      this.major = new Major(major);
+      this.religion = new Religion(religion);
+      this.substances = new Substances(substances);
+      this.noise = new Noise(noise);
+      this.cleanliness = new Cleanliness(cleanliness);
+      this.organizations = new Organizations(organizations);
+      this.sleepTimes = new sleepTimes(sleepTimes);
    }
 
    /* [METHODS] */
-
-
+   
    // Returns true/false if the person being compared is equal to this person
    // -- Overrides 'equals' for Person class
    public boolean equals(Person p)
@@ -48,23 +48,13 @@ public class Person
           
    }
 
-   // All 'Get' Methods
-   public Gender getGender() { return this.gender.getValue(); }
-   public Major getMajor() { return this.major; }
-   public Religion getReligion() { return this.religion; }
-   public Substance getSubstances() { return this.substances; }
-   public Noise getNoise() { return this.noise; }
-   public Cleanliness getCleanliness() { return this.cleanliness; }
-   public Organizations getOrganizations() { return this.organizations; }
-   public SleepTimes getSleepTimes() { return this.sleepTimes; }
-
-   // All 'Set' Methods
-   public void setGender(Gender g) { this.gender.setValue(g); }
-   public void setMajor(Major m) { this.major = m; }
-   public void setReligion(Religion r) { this.religion = r; }
-   public void setSubstances(Substances s) { this.substances = s; }
-   public void setNoise(Noise n) { this.noise = n; }
-   public void setCleanliness(Cleanliness c) { this.cleanliness = c; }
-   public void setOrganizations(Organizations o) { this.organizations = o; }
-   public void setSleepTimes(SleepTimes st) { this.sleepTimes = st; }
+   // All 'Get' Methods - returns value of each criterion, NOT the criterion object instance
+   public String getGender() { return this.gender.getValue(); }
+   public String getMajor() { return this.major.getValue(); }
+   public String getReligion() { return this.religion.getValue(); }
+   public boolean getSubstances() { return this.substances.getValue(); }
+   public int getNoise() { return this.noise.getValue(); }
+   public int getCleanliness() { return this.cleanliness.getValue(); }
+   public String getOrganizations() { return this.organizations.getValue(); }
+   public int getSleepTime() { return this.sleepTime.getValue(); }
 }
