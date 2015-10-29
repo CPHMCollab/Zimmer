@@ -23,7 +23,7 @@ public class Person
       this.noise = new Noise(noise);
       this.cleanliness = new Cleanliness(cleanliness);
       this.organizations = new Organizations(organizations);
-      this.sleepTime = new sleepTimes(sleepTime);
+      this.sleepTime = new SleepTime(sleepTime);
    }
 
    /* [METHODS] */
@@ -39,7 +39,7 @@ public class Person
           this.noise.equals(p.noise) &&
           this.cleanliness.equals(p.cleanliness) &&
           this.organizations.equals(p.organizations) &&
-          this.sleepTimes.equals(p.sleepTimes))
+          this.sleepTime.equals(p.sleepTime))
       {
          return true;
       }
