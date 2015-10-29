@@ -9,7 +9,7 @@ public class Noise implements Criteria
    
    public boolean equals(Object n)
    {
-      return n instanceof Noise && (Noise n).noise == this.noise ? true : false;
+      return n instanceof Noise && ((Noise)n).noise == this.noise ? true : false;
    }
    
    public int getValue()
