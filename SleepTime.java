@@ -9,7 +9,7 @@ public class SleepTime implements Criteria
    
    public boolean equals(Object s)
    {
-      return s instanceof SleepTime && s.sleepTime == this.sleepTime ? true : false;
+      return s instanceof SleepTime && (SleepTime s).sleepTime == this.sleepTime ? true : false;
    }
    
    public int getValue()
