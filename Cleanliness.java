@@ -9,7 +9,7 @@ public class Cleanliness implements Criteria
    
    public boolean equals(Cleanliness c)
    {
-      return c instanceof Cleanliness && c.cleanliness == this.cleanliness ? true : false;
+      return c instanceof Cleanliness && (Cleanliness c).cleanliness == this.cleanliness ? true : false;
    }
    
    public int getValue()
