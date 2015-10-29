@@ -4,7 +4,7 @@
  * Religions may be added in a later prototype
  */
 
-public class Religion {
+public class Religion implements Criteria {
    private String value;
 
    public Religion(String s) {

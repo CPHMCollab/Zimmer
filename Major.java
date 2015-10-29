@@ -4,7 +4,7 @@
  * will be added in later prototypes.
  */
 
-public class Major {
+public class Major implements Criteria {
    private String value;
 
    public Major(String s) {

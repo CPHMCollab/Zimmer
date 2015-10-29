@@ -6,7 +6,7 @@ public class Person
    private Gender gender;
    private Major major;
    private Religion religion;
-   private Substance substance;
+   private Substances substances;
    private Noise noise;
    private Cleanliness cleanliness;
    private Organizations organizations;
@@ -18,7 +18,7 @@ public class Person
       this.gender = new Gender();
       this.major = new Major();
       this.religion = new Religion();
-      this.substance = new Substance();
+      this.substances = new Substances();
       this.noise = new Noise();
       this.cleanliness = new Cleanliness();
       this.organizations = new Organizations();
@@ -35,7 +35,7 @@ public class Person
       if (this.gender.equals(p.gender) &&
           this.major.equals(p.major) &&
           this.religion.equals(p.religion) &&
-          this.substance.equals(p.substance) &&
+          this.substances.equals(p.substances) &&
           this.noise.equals(p.noise) &&
           this.cleanliness.equals(p.cleanliness) &&
           this.organizations.equals(p.organizations) &&
@@ -49,20 +49,20 @@ public class Person
    }
 
    // All 'Get' Methods
-   public Gender getGender() { return this.gender; }
+   public Gender getGender() { return this.gender.getValue(); }
    public Major getMajor() { return this.major; }
    public Religion getReligion() { return this.religion; }
-   public Substance getSubstance() { return this.substance; }
+   public Substance getSubstances() { return this.substances; }
    public Noise getNoise() { return this.noise; }
    public Cleanliness getCleanliness() { return this.cleanliness; }
    public Organizations getOrganizations() { return this.organizations; }
    public SleepTimes getSleepTimes() { return this.sleepTimes; }
 
    // All 'Set' Methods
-   public void setGender(Gender g) { this.gender = g; }
+   public void setGender(Gender g) { this.gender.setValue(g); }
    public void setMajor(Major m) { this.major = m; }
    public void setReligion(Religion r) { this.religion = r; }
-   public void setSubstance(Substance s) { this.substance = s; }
+   public void setSubstances(Substances s) { this.substances = s; }
    public void setNoise(Noise n) { this.noise = n; }
    public void setCleanliness(Cleanliness c) { this.cleanliness = c; }
    public void setOrganizations(Organizations o) { this.organizations = o; }

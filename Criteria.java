@@ -3,5 +3,5 @@
  */
 
 public interface Criteria {
-    public boolean equals();
+    public boolean equals(Object o);
 }

@@ -3,11 +3,15 @@
  * values are MALE and FEMALE. More values may be added in later prototypes.
  */
 
-public class Gender {
+public class Gender implements Criteria {
    private String value;
 
    public Gender(String s) {
       value = s;
+   }
+
+   public Gender() {
+      value = null;
    }
 
    public void setValue(String s) {

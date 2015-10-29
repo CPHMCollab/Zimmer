@@ -4,7 +4,7 @@
  * values may be added in later prototypes.
  */
 
-public class Substances {
+public class Substances implements Criteria {
    private String value;
 
    public Substances(String s) {
