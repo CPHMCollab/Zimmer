@@ -1,4 +1,4 @@
-public class SleepTime
+public class SleepTime implements Criteria
 {
    private int sleepTime;
    
@@ -7,8 +7,18 @@ public class SleepTime
       this.sleepTime = sleepTime;
    }
    
-   public boolean equals(SleepTime s)
+   public boolean equals(Object s)
    {
-      return s.sleepTime == this.sleepTime ? true : false;
+      return s instanceof SleepTime && s.sleepTime == this.sleepTime ? true : false;
+   }
+   
+   public int getValue()
+   {
+      return sleepTime;
+   }
+   
+   public void setValue(int s)
+   {
+      sleepTime = s;
    }
 }
