@@ -16,9 +16,4 @@ public class Cleanliness implements Criteria
    {
       return cleanliness;
    }
-   
-   public void setValue(int c)
-   {
-      cleanliness = c;
-   }
 }

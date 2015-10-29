@@ -16,9 +16,4 @@ public class SleepTime implements Criteria
    {
       return sleepTime;
    }
-   
-   public void setValue(int s)
-   {
-      sleepTime = s;
-   }
 }

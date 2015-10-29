@@ -16,9 +16,4 @@ public class Organizations implements Criteria
    {
       return organizations;
    }
-   
-   public void setValue(String o)
-   {
-      organizations = o;
-   }
 }
