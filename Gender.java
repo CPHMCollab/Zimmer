@@ -3,6 +3,22 @@
  * values are MALE and FEMALE. More values may be added in later prototypes.
  */
 
-public enum Gender {
-   MALE, FEMALE
+public class Gender {
+   private String value;
+
+   public Gender(String s) {
+      value = s;
+   }
+
+   public void setValue(String s) {
+      value = s;
+   }
+
+   public String getValue() {
+      return value;
+   }
+
+   @Override public boolean equals(Object o) {
+      return o instanceof Gender && ((Gender)o).getValue().equals(this.value);
+   }
 }

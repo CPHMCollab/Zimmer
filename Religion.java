@@ -4,6 +4,23 @@
  * Religions may be added in a later prototype
  */
 
-public enum Religion {
-   RELIGIOUS, NONRELIGIOUS
+public class Religion {
+   private String value;
+
+   public Religion(String s) {
+      value = s;
+   }
+
+   public void setValue(String s) {
+      value = s;
+   }
+
+   public String getValue() {
+      return value;
+   }
+
+   @Override public boolean equals(Object o) {
+      return o instanceof Religion && 
+       ((Religion)o).getValue().equals(this.value);
+   }
 }

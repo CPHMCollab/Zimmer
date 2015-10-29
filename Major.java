@@ -4,6 +4,22 @@
  * will be added in later prototypes.
  */
 
-public enum Major {
-   CAFES, CAED, CENG, CLA, OCOB, COSAM
+public class Major {
+   private String value;
+
+   public Major(String s) {
+      value = s;
+   }
+
+   public void setValue(String s) {
+      value = s;
+   }
+
+   public String getValue() {
+      return value;
+   }
+
+   @Override public boolean equals(Object o) {
+      return o instanceof Major && ((Major)o).getValue().equals(this.value);
+   }
 }
