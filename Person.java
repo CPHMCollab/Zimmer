@@ -1,3 +1,5 @@
+/* Person Object */
+
 import java.io.*;
 
 public class Person
