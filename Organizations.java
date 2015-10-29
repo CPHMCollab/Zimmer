@@ -1,4 +1,4 @@
-public class Organizations
+public class Organizations implements Criteria
 {
    private String organizations;
    
@@ -7,8 +7,18 @@ public class Organizations
       this.organizations = organizations;
    }
    
-   public boolean equals(Organizations o)
+   public boolean equals(Object o)
    {
-      return o.organizations.equals(this.organizations);
+      return o instanceof Organizations && o.organizations.equals(this.organizations);
+   }
+   
+   public String getValue()
+   {
+      return organizations;
+   }
+   
+   public void setValue(String o)
+   {
+      organizations = o;
    }
 }
