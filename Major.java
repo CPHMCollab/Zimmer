@@ -11,10 +11,6 @@ public class Major implements Criteria {
       value = s;
    }
 
-   public void setValue(String s) {
-      value = s;
-   }
-
    public String getValue() {
       return value;
    }

@@ -10,14 +10,6 @@ public class Gender implements Criteria {
       value = s;
    }
 
-   public Gender() {
-      value = null;
-   }
-
-   public void setValue(String s) {
-      value = s;
-   }
-
    public String getValue() {
       return value;
    }

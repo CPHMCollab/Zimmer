@@ -1,26 +1,22 @@
 /**
  * Substances.java class used to hold the values for the substance usage
- * tendencies of a user. Initial values are USER and NONUSER. More specific 
- * values may be added in later prototypes.
+ * tendencies of a user. Values are true and false for user and nonuser,
+ * repectively.
  */
 
 public class Substances implements Criteria {
-   private String value;
+   private boolean value;
 
-   public Substances(String s) {
+   public Substances(boolean s) {
       value = s;
    }
 
-   public void setValue(String s) {
-      value = s;
-   }
-
-   public String getValue() {
+   public boolean getValue() {
       return value;
    }
 
    @Override public boolean equals(Object o) {
       return o instanceof Substances && 
-       ((Substances)o).getValue().equals(this.value);
+       ((Substances)o).getValue() == this.value;
    }
 }
