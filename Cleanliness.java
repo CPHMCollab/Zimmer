@@ -1,4 +1,4 @@
-public class Cleanliness
+public class Cleanliness implements Criteria
 {
    private int cleanliness;
 
@@ -12,4 +12,13 @@ public class Cleanliness
       return c.cleanliness == this.cleanliness ? true : false;
    }
    
+   public int getValue()
+   {
+      return cleanliness;
+   }
+   
+   public void setValue(int c)
+   {
+      cleanliness = c;
+   }
 }
