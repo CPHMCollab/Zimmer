@@ -1,0 +1,19 @@
+{
+   "Person": {
+      "Name": {
+         "First": "Ghetto",
+         "Last": "Gopher"
+      },
+      "Email": "2G@calpoly.edu",
+      "Criteria": {
+         "Gender": "Male",
+         "Major": "GOPH",
+         "Religion": "Monk",
+         "Substances": true,
+         "Noise": 10,
+         "Organizations": "Gopher Hunting, Ghetto Cleaners, Whack a Mole, Bowling, Blacksketball, Mayonnaise",
+         "SleepTime": 20,
+         "Cleanliness": 0
+       }
+    }
+}
