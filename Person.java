@@ -22,6 +22,9 @@ public class Person
     boolean substances, int noise, int cleanliness, String organizations, 
     int sleepTime)
    {
+      this.first = first;
+      this.last = last;
+      this.email = email;
       this.gender = new Gender(gender);
       this.major = new Major(major);
       this.religion = new Religion(religion);
