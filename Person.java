@@ -58,14 +58,14 @@ public class Person
    }
 
    // All 'Get' Methods - returns value of each criterion, NOT the criterion object instance
-   public String getGender() { return this.gender.getValue(); }
-   public String getMajor() { return this.major.getValue(); }
-   public String getReligion() { return this.religion.getValue(); }
-   public boolean getSubstances() { return this.substances.getValue(); }
-   public int getNoise() { return this.noise.getValue(); }
-   public int getCleanliness() { return this.cleanliness.getValue(); }
-   public String getOrganizations() { return this.organizations.getValue(); }
-   public int getSleepTime() { return this.sleepTime.getValue(); }
+   public String getGender() { return gender; }
+   public String getMajor() { return major; }
+   public String getReligion() { return religion; }
+   public boolean getSubstances() { return substances; }
+   public int getNoise() { return noise; }
+   public int getCleanliness() { return cleanliness; }
+   public String getOrganizations() { return organizations; }
+   public int getSleepTime() { return sleepTime; }
    public String getFullName() { return first + " " + last; }
    public String getEmail() { return email; }
 }
