@@ -18,7 +18,7 @@ public class Person
    private String email;
 
    /* [CONSTRUCTOR(s)] */
-   public Person(String gender, String major, String religion, 
+   public Person(String first, String last, String email, String gender, String major, String religion, 
     boolean substances, int noise, int cleanliness, String organizations, 
     int sleepTime)
    {
