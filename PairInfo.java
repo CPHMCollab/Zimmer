@@ -1,4 +1,4 @@
-public class PairInfo
+public class PairInfo implements Comparable<PairInfo>
 {
    private Person person1;
    private Person person2;
@@ -15,4 +15,10 @@ public class PairInfo
    public Person getPerson1() { return person1; }
    public Person getPerson2() { return person2; }
    public int getMatchScore() { return matchScore; }
+   
+   // CompareTo
+   public int compareTo(PairInfo pInfo)
+   {
+      return this.matchScore - pInfo.getMatchScore();
+   }
 }
