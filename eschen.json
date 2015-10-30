@@ -1,19 +1,13 @@
 {
-   "Person": {
-      "Name": {
-         "First": "Eva",
-         "Last": "Chen"
-      },
-      "Email": "eschen@calpoly.edu",
-      "Criteria": {
-         "Gender": "Female",
-         "Major": "CENG",
-         "Religion": "None",
-         "Substances": false,
-         "Noise": 0,
-         "Organizations": "Club",
-         "SleepTime": 0,
-         "Cleanliness": 0
-       }
-    }
+   "FirstName": "Eva",
+   "LastName": "Chen",
+   "Email": "eschen@calpoly.edu",
+   "Gender": "Female",
+   "Major": "CENG",
+   "Religion": "None",
+   "Substances": false,
+   "Noise": 0,
+   "Organizations": "Club",
+   "SleepTime": 0,
+   "Cleanliness": 0
 }
