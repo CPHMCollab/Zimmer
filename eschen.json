@@ -7,7 +7,7 @@
    "Religion": "None",
    "Substances": false,
    "Noise": 0,
-   "Organizations": "Club",
+   "Organizations": ["Club"],
    "SleepTime": 0,
    "Cleanliness": 0
 }

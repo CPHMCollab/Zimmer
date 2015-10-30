@@ -7,7 +7,7 @@
    "Religion": "nonreligious",
    "Substances": true,
    "Noise": 4,
-   "Organizations": ["club","greek","ROTC"],
+   "Organizations": ["Club","Greek","ROTC"],
    "SleepTime": 23,
    "Cleanliness": 8
 }

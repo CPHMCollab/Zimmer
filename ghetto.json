@@ -7,7 +7,7 @@
    "Religion": "religious",
    "Substances": true,
    "Noise": 10,
-   "Organizations": "Gopher Hunting, Ghetto Cleaners, Whack a Mole, Bowling, Blacksketball, Mayonnaise",
+   "Organizations": ["Social Clubs"],
    "SleepTime": 20,
    "Cleanliness": 0
 }
