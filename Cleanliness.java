@@ -7,9 +7,16 @@ public class Cleanliness implements Criteria
       this.cleanliness = cleanliness;
    }
    
-   public boolean equals(Cleanliness c)
+   public boolean equals(Object c)
    {
-      return c instanceof Cleanliness && ((Cleanliness)c).cleanliness == this.cleanliness ? true : false;
+      if (c instanceof Cleanliness)
+      {
+         Cleanliness other = (Cleanliness)c;
+         int high = other.cleanliness + 2;
+         int low = other.cleanliness - 2;
+         return cleanliness <= high && cleanliness >= low ? true : false; 
+      }
+      return false;
    }
    
    public int getValue()
