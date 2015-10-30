@@ -6,8 +6,8 @@
    "Major": "CENG",
    "Religion": "None",
    "Substances": false,
-   "Noise": 0,
-   "Organizations": ["Club"],
-   "SleepTime": 0,
-   "Cleanliness": 0
+   "Noise": 1,
+   "Organizations": ["Social Clubs"],
+   "SleepTime": 1,
+   "Cleanliness": 1
 }
