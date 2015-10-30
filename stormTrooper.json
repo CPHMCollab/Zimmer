@@ -1,19 +1,13 @@
 {
-   "Person": {
-      "Name": {
-         "First": "Storm",
-         "Last": "Trooper"
-      },
-      "Email": "needHelpAiming@calpoly.edu",
-      "Criteria": {
-         "Gender": "Male",
-         "Major": "Sith",
-         "Religion": "The Dark Side",
-         "Substances": true,
-         "Noise": 7,
-         "Organizations": "Shooting-Around-The-Rebels club, Mind-Controlled Anonymous",
-         "SleepTime": 19,
-         "Cleanliness": 10
-       }
-    }
+   "FirstName": "Storm",
+   "LastName": "Trooper",
+   "Email": "needHelpAiming@calpoly.edu",
+   "Gender": "Male",
+   "Major": "Sith",
+   "Religion": "The Dark Side",
+   "Substances": true,
+   "Noise": 7,
+   "Organizations": "Shooting-Around-The-Rebels club, Mind-Controlled Anonymous",
+   "SleepTime": 19,
+   "Cleanliness": 10
 }
