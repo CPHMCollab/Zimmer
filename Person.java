@@ -15,8 +15,9 @@ public class Person
    private SleepTime sleepTime;
 
    /* [CONSTRUCTOR(s)] */
-   public Person(String gender, String major, String religion, boolean substances, 
-    int noise, int cleanliness, String organizations, int sleepTime)
+   public Person(String gender, String major, String religion, 
+    boolean substances, int noise, int cleanliness, String organizations, 
+    int sleepTime)
    {
       this.gender = new Gender(gender);
       this.major = new Major(major);
