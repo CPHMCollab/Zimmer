@@ -13,6 +13,9 @@ public class Person
    private Cleanliness cleanliness;
    private Organizations organizations;
    private SleepTime sleepTime;
+   private String first;
+   private String last;
+   private String email;
 
    /* [CONSTRUCTOR(s)] */
    public Person(String gender, String major, String religion, 
@@ -60,4 +63,7 @@ public class Person
    public int getCleanliness() { return this.cleanliness.getValue(); }
    public String getOrganizations() { return this.organizations.getValue(); }
    public int getSleepTime() { return this.sleepTime.getValue(); }
+   public String getFirst() { return first; }
+   public String getLast() { return last; }
+   public String getEmail() { return email; }
 }
