@@ -4,6 +4,7 @@
  */
 
 import java.io.*;
+import java.util.*;
 import com.google.gson.*;
 
 public class Matcher {
@@ -51,5 +52,42 @@ public class Matcher {
       }
 
       return score;
+   }
+
+   public static List<PairInfo> generatePairs(List<Person> people) {
+      List<PairInfo> pairs = new ArrayList<PairInfo>();
+      Person p1, p2;
+
+      for(int i = 0; i < people.size(); i++) {
+         for(int j = i + 1; j < people.size(); i++) {
+            p1 = people.get(i);
+            p2 = people.get(j);
+            pairs.add(new PairInfo(p1, p2, findMatchFactor(p1, p2)));
+         }
+      }
+      //TODO sort   
+      return pairs;
+   }
+
+   public static List<PairInfo> getBestPairSet(List<Person> people) {
+      List<Person> needPairs = new ArrayList<Person>();
+      List<PairInfo> finalPairs = new ArrayList<PairInfo>();
+      int index = 0;
+      PairInfo cur;
+      List<PairInfo> allPairs = generatePairs(people);
+
+      needPairs.addAll(people);
+      while(!needPairs.isEmpty()) {
+         cur = allPairs.get(index);
+         if(needPairs.indexOf(cur.getPerson1()) > -1 
+          && needPairs.indexOf(cur.getPerson2()) > -1) {
+            finalPairs.add(cur);
+            needPairs.remove(cur.getPerson1());
+            needPairs.remove(cur.getPerson2());
+         }
+         index++;
+      }
+
+      return finalPairs;
    }
 }
