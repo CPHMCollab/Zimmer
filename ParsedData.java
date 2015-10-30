@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ParsedData {
 
    private String FirstName;
@@ -8,7 +10,7 @@ public class ParsedData {
    private String Religion;
    private boolean Substances;
    private int Noise;
-   private String Organizations;
+   private List Organizations;
    private int SleepTime;
    private int Cleanliness;
 

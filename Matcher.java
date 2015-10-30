@@ -15,6 +15,41 @@ public class Matcher {
       ParsedData data2 = gson.fromJson(br2, ParsedData.class);
 
       Person p1 = data1.createPerson();
-      Person p1 = data2.createPerson();
+      Person p2 = data2.createPerson();
+      
+      System.out.println(p1.getFullName() + " and " + p2.getFullName() + 
+       " have a match factor of " + findMatchFactor(p1, p2));
+   }
+
+   public static int findMatchFactor(Person p1, Person p2) {
+      int score = 1;
+      if(!p1.getGender().equals(p2.getGender())) {
+         return score;
+      }
+      score++;
+      if(!p1.getMajor().equals(p2.getMajor())) {
+         return score;
+      }
+      score += 2;
+      if(p1.getReligion().equals(p2.getReligion())) {
+         score++;
+      }
+      if(p1.getSubstances().equals(p2.getSubstances())) {
+         score++;
+      }
+      if(p1.getNoise().equals(p2.getNoise())) {
+         score++;
+      }
+      if(p1.getCleanliness().equals(p2.getCleanliness())) {
+         score++;
+      }
+      if(p1.getOrganizations().equals(p2.getOrganizations())) {
+         score++;
+      }
+      if(p1.getSleepTime().equals(p2.getSleepTime())) {
+         score++;
+      }
+
+      return score;
    }
 }

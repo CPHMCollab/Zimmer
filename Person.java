@@ -1,6 +1,7 @@
 /* Person Object */
 
 import java.io.*;
+import java.util.*;
 
 public class Person
 {
@@ -18,9 +19,9 @@ public class Person
    private String email;
 
    /* [CONSTRUCTOR(s)] */
-   public Person(String first, String last, String email, String gender, String major, String religion, 
-    boolean substances, int noise, int cleanliness, String organizations, 
-    int sleepTime)
+   public Person(String first, String last, String email, String gender, 
+    String major, String religion, boolean substances, int noise, 
+    int cleanliness, List<String> organizations, int sleepTime)
    {
       this.first = first;
       this.last = last;
@@ -60,7 +61,7 @@ public class Person
    // All 'Get' Methods - returns value of each criterion, NOT the criterion object instance
    public Gender getGender() { return gender; }
    public Major getMajor() { return major; }
-   public Major getReligion() { return religion; }
+   public Religion getReligion() { return religion; }
    public Substances getSubstances() { return substances; }
    public Noise getNoise() { return noise; }
    public Cleanliness getCleanliness() { return cleanliness; }
