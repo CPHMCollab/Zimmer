@@ -66,7 +66,6 @@ public class Person
    public int getCleanliness() { return this.cleanliness.getValue(); }
    public String getOrganizations() { return this.organizations.getValue(); }
    public int getSleepTime() { return this.sleepTime.getValue(); }
-   public String getFirst() { return first; }
-   public String getLast() { return last; }
+   public String getName() { return first + " " + last; }
    public String getEmail() { return email; }
 }
