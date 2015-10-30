@@ -10,7 +10,7 @@ public class ParsedData {
    private String Religion;
    private boolean Substances;
    private int Noise;
-   private List Organizations;
+   private List<String> Organizations;
    private int SleepTime;
    private int Cleanliness;
 
