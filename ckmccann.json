@@ -9,6 +9,6 @@
    "substances": true,
    "noise": 4,
    "organizations": ["Club","Greek","ROTC"],
-   "cleanliness": 8
-   "sleeptime": 23,
+   "cleanliness": 8,
+   "sleeptime": 23
 }
