@@ -1,13 +1,14 @@
 {
-   "FirstName": "Ghetto",
-   "LastName": "Gopher",
-   "Email": "2G@calpoly.edu",
-   "Gender": "Male",
-   "Major": "GOPH",
-   "Religion": "religious",
-   "Substances": true,
-   "Noise": 10,
-   "Organizations": ["Social Clubs"],
-   "SleepTime": 20,
-   "Cleanliness": 1
+   "timestamp": "itstheholidayseasonthehappiesttimeoftheyear",
+   "firstname": "ghetto",
+   "lastname": "gopher",
+   "email": "2g@calpoly.edu",
+   "gender": "male",
+   "major": "goph",
+   "religion": "religious",
+   "substances": true,
+   "noise": 10,
+   "organizations": ["social clubs"],
+   "cleanliness": 1,
+   "sleeptime": 20
 }
