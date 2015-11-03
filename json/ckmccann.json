@@ -1,0 +1,14 @@
+{
+   "timestamp": "kdsjfhksdf",
+   "firstname": "Colleen",
+   "lastname": "McCann",
+   "email": "ckmccann@calpoly.edu",
+   "gender": "Female",
+   "major": "COSAM",
+   "religion": "nonreligious",
+   "substances": true,
+   "noise": 4,
+   "organizations": ["Club","Greek","ROTC"],
+   "cleanliness": 8
+   "sleeptime": 23,
+}
