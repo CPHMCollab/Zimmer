@@ -21,4 +21,10 @@ public class PairInfo implements Comparable<PairInfo>
    {
       return this.matchScore - pInfo.getMatchScore();
    }
+   
+   // toString
+   public String toString()
+   {
+      return person1.getFullName() + "," + person2.getFullName() + "," + this.matchScore;
+   }
 }
