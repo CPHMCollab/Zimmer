@@ -1,13 +1,14 @@
 {
-   "FirstName": "Colleen",
-   "LastName": "McCann",
-   "Email": "ckmccann@calpoly.edu",
-   "Gender": "Female",
-   "Major": "COSAM",
-   "Religion": "nonreligious",
-   "Substances": true,
-   "Noise": 4,
-   "Organizations": ["Club","Greek","ROTC"],
-   "SleepTime": 23,
-   "Cleanliness": 8
+   "timestamp": "kdsjfhksdf",
+   "firstname": "Colleen",
+   "lastname": "McCann",
+   "email": "ckmccann@calpoly.edu",
+   "gender": "Female",
+   "major": "COSAM",
+   "religion": "nonreligious",
+   "substances": true,
+   "noise": 4,
+   "organizations": ["Club","Greek","ROTC"],
+   "cleanliness": 8
+   "sleeptime": 23,
 }
