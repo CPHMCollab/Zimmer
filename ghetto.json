@@ -8,7 +8,7 @@
    "religion": "religious",
    "substances": true,
    "noise": 10,
-   "organizations": ["social clubs"],
+   "organizations": ["Social Clubs"],
    "cleanliness": 1,
    "sleeptime": 20
 }
