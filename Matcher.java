@@ -19,24 +19,11 @@ public class Matcher {
       List<PairInfo> results;
 
       while ((line = fileListBR.readLine()) != null) {
-         System.out.println(line);
          JsonBR = new BufferedReader(new FileReader(line));
          pd = gson.fromJson(JsonBR, ParsedData.class);
-         System.out.println(pd);
          people.add(pd.createPerson());
       }
       
-      /*
-      BufferedReader br1 = new BufferedReader(new FileReader("ckmccann.json"));
-      ParsedData data1 = gson.fromJson(br1, ParsedData.class);
-      BufferedReader br2 = new BufferedReader(new FileReader("eschen.json"));
-      ParsedData data2 = gson.fromJson(br2, ParsedData.class);
-      Person p1 = data1.createPerson();
-      Person p2 = data2.createPerson();
-      */
-
-      //System.out.println(p1.getFullName() + " and " + p2.getFullName() + 
-      // " have a match factor of " + findMatchFactor(p1, p2));
       results = getBestPairSet(people);
 
       for(PairInfo p : results) {
@@ -49,11 +36,10 @@ public class Matcher {
       if(!p1.getGender().equals(p2.getGender())) {
          return score;
       }
-      score++;
-      if(!p1.getMajor().equals(p2.getMajor())) {
-         return score;
-      }
       score += 2;
+      if(!p1.getMajor().equals(p2.getMajor())) {
+         score += 2;
+      }
       if(p1.getReligion().equals(p2.getReligion())) {
          score++;
       }
@@ -81,13 +67,14 @@ public class Matcher {
       Person p1, p2;
 
       for(int i = 0; i < people.size(); i++) {
-         for(int j = i + 1; j < people.size(); i++) {
+         for(int j = i + 1; j < people.size(); j++) {
             p1 = people.get(i);
             p2 = people.get(j);
             pairs.add(new PairInfo(p1, p2, findMatchFactor(p1, p2)));
          }
       }
-      //TODO sort   
+      Collections.sort(pairs);
+      System.out.println(pairs);
       return pairs;
    }
 

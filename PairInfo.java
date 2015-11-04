@@ -19,12 +19,12 @@ public class PairInfo implements Comparable<PairInfo>
    // CompareTo
    public int compareTo(PairInfo pInfo)
    {
-      return this.matchScore - pInfo.getMatchScore();
+      return pInfo.getMatchScore() - this.matchScore;
    }
    
    // toString
    public String toString()
    {
-      return person1.getFullName() + "," + person2.getFullName() + "," + this.matchScore;
+      return person1.getFullName() + ", " + person2.getFullName() + ", " + this.matchScore;
    }
 }

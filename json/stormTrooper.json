@@ -1,14 +1,14 @@
 {
    "timestamp": "timeisjustatheory",
-   "firstname": "storm",
-   "lastname": "trooper",
+   "firstname": "Storm",
+   "lastname": "Trooper",
    "email": "needhelpaiming@calpoly.edu",
-   "gender": "male",
-   "major": "sith",
+   "gender": "Male",
+   "major": "CLA",
    "religion": "religious",
    "substances": true,
    "noise": 7,
-   "organizations": "Shooting-Around-The-Rebels Club, Mind-Controlled Anonymous",
+   "organizations": ["Shooting-Around-The-Rebels Club", "Mind-Controlled Anonymous"],
    "cleanliness": 10,
    "sleeptime": 19
 }

@@ -15,6 +15,6 @@ public class Gender implements Criteria {
    }
 
    @Override public boolean equals(Object o) {
-      return o instanceof Gender && ((Gender)o).getValue().equals(this.value);
+      return o instanceof Gender && ((Gender)o).value.equals(this.value);
    }
 }

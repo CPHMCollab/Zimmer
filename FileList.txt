@@ -1,2 +1,4 @@
 json/ckmccann.json
 json/eschen.json
+json/ghetto.json
+json/stormTrooper.json
