@@ -25,7 +25,8 @@ public class Matcher {
       }
       
       results = getBestPairSet(people);
-
+      
+      System.out.println("Roommate pairs:");
       for(PairInfo p : results) {
          System.out.println(p);
       }
@@ -74,7 +75,6 @@ public class Matcher {
          }
       }
       Collections.sort(pairs);
-      System.out.println(pairs);
       return pairs;
    }
 
@@ -86,7 +86,7 @@ public class Matcher {
       List<PairInfo> allPairs = generatePairs(people);
 
       needPairs.addAll(people);
-      while(!needPairs.isEmpty()) {
+      while(needPairs.size() > 1) {
          cur = allPairs.get(index);
          if(needPairs.indexOf(cur.getPerson1()) > -1 
           && needPairs.indexOf(cur.getPerson2()) > -1) {
@@ -95,6 +95,10 @@ public class Matcher {
             needPairs.remove(cur.getPerson2());
          }
          index++;
+      }
+      if(!needPairs.isEmpty()) {
+         System.out.println("There were an odd number of applicants. " + 
+          "No roommate found for user " + needPairs.get(0).getFullName() + ".");
       }
 
       return finalPairs;
