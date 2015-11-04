@@ -10,16 +10,38 @@ import com.google.gson.*;
 public class Matcher {
    public static void main(String[] args) throws IOException {
       Gson gson = new Gson();
+      ArrayList<Person> people = new ArrayList<Person>();
+      BufferedReader fileListBR = 
+       new BufferedReader(new FileReader("fileList.txt")); 
+      String line;
+      BufferedReader JsonBR;
+      ParsedData pd;
+      List<PairInfo> results;
+
+      while ((line = fileListBR.readLine()) != null) {
+         System.out.println(line);
+         JsonBR = new BufferedReader(new FileReader(line));
+         pd = gson.fromJson(JsonBR, ParsedData.class);
+         System.out.println(pd);
+         people.add(pd.createPerson());
+      }
+      
+      /*
       BufferedReader br1 = new BufferedReader(new FileReader("ckmccann.json"));
       ParsedData data1 = gson.fromJson(br1, ParsedData.class);
       BufferedReader br2 = new BufferedReader(new FileReader("eschen.json"));
       ParsedData data2 = gson.fromJson(br2, ParsedData.class);
-
       Person p1 = data1.createPerson();
       Person p2 = data2.createPerson();
-      
-      System.out.println(p1.getFullName() + " and " + p2.getFullName() + 
-       " have a match factor of " + findMatchFactor(p1, p2));
+      */
+
+      //System.out.println(p1.getFullName() + " and " + p2.getFullName() + 
+      // " have a match factor of " + findMatchFactor(p1, p2));
+      results = getBestPairSet(people);
+
+      for(PairInfo p : results) {
+         System.out.println(p);
+      }
    }
 
    public static int findMatchFactor(Person p1, Person p2) {
