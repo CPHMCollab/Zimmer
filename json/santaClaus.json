@@ -1,0 +1,14 @@
+{
+   "timestamp": "ImfreakingSantaClausImEverywhereAtTheSameTime"
+   "firstname": "Santa",
+   "lastname": "Claus",
+   "email": "NaughtyOrNice@calpoly.edu",
+   "gender": "Male",
+   "major": "CLA",
+   "religion": "religious",
+   "substances": true,
+   "noise": 1,
+   "organizations": ["Put-Out-Your-Fires-On-Christmas-Eve Coalition", "Diabetics United"],
+   "cleanliness": 9,
+   "sleeptime": 9
+}
