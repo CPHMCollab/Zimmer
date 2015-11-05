@@ -2,3 +2,9 @@ json/ckmccann.json
 json/eschen.json
 json/ghetto.json
 json/stormTrooper.json
+json/bear.json
+json/bruceBanner.json
+json/donaldTrump.json
+json/santaClaus.json
+json/stephCurry.json
+json/tomBrady.json
