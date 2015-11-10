@@ -30,6 +30,10 @@ public class TreeNode {
 
    public Person getP2() { return p2; }
 
+   public TreeNode getParent() { return parent; }
+
+   public boolean hasParent() { return parent == null ? false : true; }
+
    @Override public String toString() {
       return p1.getFullName() + ", " + p2.getFullName() + ", " + score;
    }

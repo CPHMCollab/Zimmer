@@ -16,20 +16,20 @@ public class Matcher {
       String line;
       BufferedReader JsonBR;
       ParsedData pd;
-      List<PairInfo> results;
+      TreeNode root = new TreeNode(null, null, -1, 0, null);
+      TreeNode goal;
 
       while ((line = fileListBR.readLine()) != null) {
          JsonBR = new BufferedReader(new FileReader(line));
          pd = gson.fromJson(JsonBR, ParsedData.class);
          people.add(pd.createPerson());
       }
-      
-      results = getBestPairSet(people);
+
+      goal = buildTree(root, people);
       
       System.out.println("Roommate pairs:");
-      for(PairInfo p : results) {
-         System.out.println(p);
-      }
+      printBacktrace(goal);
+      System.out.println("Sum of all match scores: " + goal.getSum());
    }
 
    public static int findMatchFactor(Person p1, Person p2) {
@@ -37,7 +37,7 @@ public class Matcher {
       if(!p1.getGender().equals(p2.getGender())) {
          return score;
       }
-      score += 2;
+      score ++;
       if(!p1.getMajor().equals(p2.getMajor())) {
          score += 2;
       }
@@ -62,6 +62,45 @@ public class Matcher {
 
       return score;
    }
+
+   public static TreeNode buildTree(TreeNode parent, List<Person> current) {
+      TreeNode n;
+      Person p = current.get(0), cur;
+      List<Person> newList;
+      int score;
+      TreeNode goal = null, temp;
+      for (int i = 1; i < current.size(); i++) {
+         cur = current.get(i);
+         score = findMatchFactor(p, cur);
+         n = new TreeNode(p, cur, score, parent.getSum() + score, parent);
+         parent.addChild(n);
+         newList = new ArrayList<Person>(current);
+         newList.remove(p);
+         newList.remove(cur);
+         if (!newList.isEmpty()) {
+            temp = buildTree(n, newList);
+            if (goal == null || temp.getSum() > goal.getSum()) {
+               goal = temp;
+            }
+         }
+         else {
+            return n;
+         }
+      }
+      return goal;
+   }
+
+   public static void printBacktrace(TreeNode goal) {
+      TreeNode n = goal;
+
+      while (n.hasParent()) {
+         System.out.println(n);
+         n = n.getParent();
+      }
+   }
+
+/*
+ ********************** PROTOTYPE 1 *************************
 
    public static List<PairInfo> generatePairs(List<Person> people) {
       List<PairInfo> pairs = new ArrayList<PairInfo>();
@@ -103,4 +142,5 @@ public class Matcher {
 
       return finalPairs;
    }
+   */
 }
