@@ -12,7 +12,7 @@ public class Matcher {
       Gson gson = new Gson();
       ArrayList<Person> people = new ArrayList<Person>();
       BufferedReader fileListBR = 
-       new BufferedReader(new FileReader("fileList.txt")); 
+       new BufferedReader(new FileReader("FileList.txt")); 
       String line;
       BufferedReader JsonBR;
       ParsedData pd;
