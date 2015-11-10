@@ -84,7 +84,6 @@ public class Matcher {
             }
          }
          else {
-            System.out.println(n.getSum());
             return n;
          }
       }
@@ -95,6 +94,7 @@ public class Matcher {
       TreeNode n = goal;
 
       while (n.hasParent()) {
+         System.out.println(n);
          n = n.getParent();
       }
    }
