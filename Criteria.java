@@ -1,5 +1,5 @@
 /**
- * Created by evachen on 10/27/15.
+ * Created by evachen on 10/27/15..
  */
 
 public interface Criteria {
