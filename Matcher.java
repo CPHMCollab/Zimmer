@@ -43,9 +43,10 @@ public class Matcher
       System.out.println("Sum of all match scores: " + goal.getSum());
    }
    
-   // ****************************************
-   // ***** Methods relating to Matching *****
-   // ****************************************
+   /**
+    * Checks if criteria keyword 'name' exists in the list p
+    * @return If criteria exists in list
+    */
    public boolean existsInList(String name, List<Criteria> p)
    {
       for (Criteria c : p)
@@ -57,7 +58,7 @@ public class Matcher
       }
       return false;
    }
-   
+   /** Returns list of Criteria that can be evaluated (does p1 and p2 have same criteria) */
    public ArrayList<String> getCommonCriteria(List<Criteria> p1, List<Criteria> p2) {   
       ArrayList<String> commons = new ArrayList<String>();
       for (Criteria c : p1) {
@@ -68,7 +69,8 @@ public class Matcher
       return commons;
    }
 
-
+   /**Given 2 'Person', find the sum score of both people, where each person's score is
+    * calculated by Person1's personal evaluation to Person2's expected critera. */
    public static int findMatchFactor(Person p1, Person p2) {
       // Given: P1, P2
       //
@@ -105,7 +107,10 @@ public class Matcher
    // *************************************************************
    // ***** Methods relating to Tree building & our Algorithm *****
    // *************************************************************
-
+   //
+   /**
+    * Recursively builds tree while tracking the best Person to pair for the subject Person's tree.
+    */
    public static TreeNode buildTree(TreeNode parent, List<Person> current) {
       TreeNode n;
       Person p = current.get(0), cur;
@@ -132,7 +137,8 @@ public class Matcher
       }
       return goal;
    }
-
+   face
+   
    public static void printBacktrace(TreeNode goal) {
       TreeNode n = goal;
 
