@@ -6,13 +6,18 @@
 import java.io.*;
 import java.util.*;
 import com.google.gson.*;
-
-public class Matcher 
+/**
+ * Main class that the best set of pairs with the goal of least deviation between all pairs.
+ */
+public class Matcher
 {
    // MAGIC NUMBERS
+   /** The scale range used to calculate score */
    public static final int SCALE = 10;
    public static final int MULTIPLIER = 100;
-   
+   /**
+    * Creates a tree with empty root node, 
+    */
    public static void main(String[] args) throws IOException {
       Gson gson = new Gson();
       ArrayList<Person> people = new ArrayList<Person>();
@@ -21,15 +26,16 @@ public class Matcher
       String line;
       BufferedReader JsonBR;
       ParsedData pd;
+      // Initiate empty root node for tree
       TreeNode root = new TreeNode(null, null, -1, 0, null);
       TreeNode goal;
-
+      // Add all people (JSON files) as 'People' object
       while ((line = fileListBR.readLine()) != null) {
          JsonBR = new BufferedReader(new FileReader(line));
          pd = gson.fromJson(JsonBR, ParsedData.class);
          people.add(pd.createPerson());
       }
-
+      // Insert people into the tree
       goal = buildTree(root, people);
       
       System.out.println("Roommate pairs:");
