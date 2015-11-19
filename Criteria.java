@@ -7,7 +7,12 @@ public Criteria {
     private int weight;
     private int score;
     
-    public Criteria()
+    public Criteria(String name, int weight, int score)
+    {
+        this.name = name;
+        this.weight = weight;
+        this.score = score;
+    }
     
     public String getName() { return this.name; }
     public void setName(String name) { this.name = name; }
