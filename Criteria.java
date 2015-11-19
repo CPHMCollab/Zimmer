@@ -4,7 +4,7 @@
 
 public Criteria {
     private String name;
-    private int weight;
+    private double percentageWeight; // weight percentage of the criterion (e.g. 0.65 = 65% weight)
     private int score;
     
     public Criteria(String name, int weight, int score)
@@ -18,6 +18,6 @@ public Criteria {
     public void setName(String name) { this.name = name; }
     public int getScore() { return score; }
     public void setScore(int score) { this.score = score; }
-    public int getWeight() { return weight; }
+    public double getPercentageWeight() { return percentageWeight; }
     public void setWeight(int weight) { this.weight = weight; }
 }
