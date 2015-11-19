@@ -3,9 +3,86 @@
 import java.io.*;
 import java.util.*;
 
+
+public Person 
+{
+   // [INSTANCE VARIABLES]
+   private String first;
+   private String last;
+   private String email;
+   private ArrayList<Criteria> personal;
+   private ArrayList<Criteria> expected;
+   
+   // [CONSTRUCTORS]
+   public Person() 
+   {
+      personal = new ArrayList<Criteria>();
+      expected = new ArrayList<Criteria>();
+   }
+   
+   public Person(String first, String last, String email, 
+    ArrayList<Criteria> pList, ArrayList<Criteria> eList)
+   {
+      this.first = first;
+      this.last = last;
+      this.email = email;
+      this.personal = pList;
+      this.expected = eList;
+   }
+   
+   // [METHODS]
+   // 'Get' Methods
+   public String getFirstName() { return this.first; }
+   public String getLastName() { return this.last; }
+   public String getEmail() { return this.email; }
+   public ArrayList<Criteria> getPersonalCriteria() { return this.personal; }
+   public ArrayList<Criteria> getExpectedCriteria() { return this.expected; }
+   
+   // 'Set' Methods
+   public void setFirstName(String fn) { this.first = fn; }
+   public void setLastName(String ln) { this.last = ln; }
+   public void setEmail(String e) { this.email = e; }
+   
+   // Checks if a criteria exists in the Personal list of Criteria
+   public boolean existsInPersonal(Criteria crit)
+   {
+      for (Criteria c : this.personal)
+      {
+         if (c.getName().equalsIgnoreCase(crit.getName()))
+         {
+            return true;
+         }
+      }   
+      return false;
+   }
+   
+   // Checks if a criteria exists in the Expected list of Criteria
+   public boolean existsInExpected(Criteria crit)
+   {
+      for (Criteria c : this.expected)
+      {
+         if (c.getName().equalsIgnoreCase(crit.getName()))
+         {
+            return true;
+         }
+      }
+      return false;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+/*
 public class Person
 {
-   /* [INSTANCE VARIABLES] */
+   /* [INSTANCE VARIABLES] * /
    private Gender gender;
    private Major major;
    private Religion religion;
@@ -18,7 +95,7 @@ public class Person
    private String last;
    private String email;
 
-   /* [CONSTRUCTOR(s)] */
+   /* [CONSTRUCTOR(s)] * /
    public Person(String first, String last, String email, String gender, 
     String major, String religion, boolean substances, int noise, 
     int cleanliness, List<String> organizations, int sleepTime)
@@ -36,7 +113,7 @@ public class Person
       this.sleepTime = new SleepTime(sleepTime);
    }
 
-   /* [METHODS] */
+   /* [METHODS] * /
    
    // Returns true/false if the person being compared is equal to this person
    // -- Overrides 'equals' for Person class
@@ -70,3 +147,4 @@ public class Person
    public String getFullName() { return first + " " + last; }
    public String getEmail() { return email; }
 }
+*/
