@@ -14,7 +14,7 @@ public Criteria {
     /** A person's self-evaluation of their criteria as a roommate. */
     private int score;
     
-    public Criteria(String name, int weight, int score)
+    public Criteria(String name, double weight, int score)
     {
         this.name = name;
         this.percentageWeight = weight;
@@ -26,5 +26,5 @@ public Criteria {
     public int getScore() { return score; }
     public void setScore(int score) { this.score = score; }
     public double getPercentageWeight() { return percentageWeight; }
-    public void setWeight(int weight) { this.weight = weight; }
+    public void setPercentageWeight(double weight) { this.percentageWeight = weight; }
 }
