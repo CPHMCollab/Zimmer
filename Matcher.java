@@ -51,6 +51,16 @@ public class Matcher
       }
       return false;
    }
+   
+   public ArrayList<String> getCommonCriteria(List<Criteria> p1, List<Criteria> p2) {   
+      ArrayList<String> commons = new ArrayList<String>();
+      for (Criteria c : p1) {
+         if (existsInOther(c.getName(), p2)) {
+            commons.add(c.getName());
+         }
+      }
+      return commons;
+   }
 
 
    public static int findMatchFactor(Person p1, Person p2) {
@@ -65,6 +75,22 @@ public class Matcher
       // P2Score = P2CriteriaScore1 + P2CriteriaScore2 + ... + P2CriteriaScoreN
       //
       // MatchScore = P1Score + P2Score
+      
+      ArrayList<String> commonCrit1 = getCommonCriteria(p1.getPersonalCriteria(), p2.getExpectedCriteria());
+      ArrayList<String> commonCrit2 = getCommonCriteria(p1.getExpectedCriteria(), p2.getPersonalCriteria());
+      int p1Score = 0;
+      
+      // Calculating P1's expected score with P2's personal criteria
+      for (String crit : commonCrit1)
+      {
+         for (Criteria c : p1.getPersonalCriteria())
+         {
+            if (c.getName().equalsIgnoreCase(crit))
+            {
+               p1Score += ((SCALE - Math.abs(/* somehow need to get p2's criteria value */)))
+            }
+         }
+      }
       
       int score = 1;
    }
