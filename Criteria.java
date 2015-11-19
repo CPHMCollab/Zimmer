@@ -17,7 +17,7 @@ public Criteria {
     public Criteria(String name, int weight, int score)
     {
         this.name = name;
-        this.weight = weight;
+        this.percentageWeight = weight;
         this.score = score;
     }
     
