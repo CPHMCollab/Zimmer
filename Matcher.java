@@ -7,7 +7,12 @@ import java.io.*;
 import java.util.*;
 import com.google.gson.*;
 
-public class Matcher {
+public class Matcher 
+{
+   // MAGIC NUMBERS
+   public static final int SCALE = 10;
+   public static final int MULTIPLIER = 100;
+   
    public static void main(String[] args) throws IOException {
       Gson gson = new Gson();
       ArrayList<Person> people = new ArrayList<Person>();
@@ -31,37 +36,43 @@ public class Matcher {
       printBacktrace(goal);
       System.out.println("Sum of all match scores: " + goal.getSum());
    }
+   
+   // ****************************************
+   // ***** Methods relating to Matching *****
+   // ****************************************
+   public boolean existsInList(String name, List<Criteria> p)
+   {
+      for (Criteria c : p)
+      {
+         if (c.getName().equalsIgnoreCase(name))
+         {
+            return true;
+         }
+      }
+      return false;
+   }
+
 
    public static int findMatchFactor(Person p1, Person p2) {
+      // Given: P1, P2
+      //
+      // Math.abs: absolute value
+      // 
+      // P1CriteriaScoreN = ((SCALE - Math.abs(P1.Expected - P2.Personal)) * MULTIPLIER) * P1.CriteriaNPercentage)
+      // P1Score = P1CriteriaScore1 + P1CriteriaScore2 + ... + P1CriteriaScoreN
+      //      
+      // P2CriteriaScoreN = ((SCALE - Math.abs(P2.Expected - P1.Personal)) * MULTIPLIER) * P2.CriteriaNPercentage)
+      // P2Score = P2CriteriaScore1 + P2CriteriaScore2 + ... + P2CriteriaScoreN
+      //
+      // MatchScore = P1Score + P2Score
+      
       int score = 1;
-      if(!p1.getGender().equals(p2.getGender())) {
-         return score;
-      }
-      score ++;
-      if(!p1.getMajor().equals(p2.getMajor())) {
-         score += 2;
-      }
-      if(p1.getReligion().equals(p2.getReligion())) {
-         score++;
-      }
-      if(p1.getSubstances().equals(p2.getSubstances())) {
-         score++;
-      }
-      if(p1.getNoise().equals(p2.getNoise())) {
-         score++;
-      }
-      if(p1.getCleanliness().equals(p2.getCleanliness())) {
-         score++;
-      }
-      if(p1.getOrganizations().equals(p2.getOrganizations())) {
-         score++;
-      }
-      if(p1.getSleepTime().equals(p2.getSleepTime())) {
-         score++;
-      }
-
-      return score;
    }
+
+
+   // *************************************************************
+   // ***** Methods relating to Tree building & our Algorithm *****
+   // *************************************************************
 
    public static TreeNode buildTree(TreeNode parent, List<Person> current) {
       TreeNode n;
@@ -98,6 +109,41 @@ public class Matcher {
          n = n.getParent();
       }
    }
+   
+/*
+ ********************** PROTOTYPE 2 *************************
+ 
+   public static int findMatchFactor(Person p1, Person p2) {
+      int score = 1;
+      if(!p1.getGender().equals(p2.getGender())) {
+         return score;
+      }
+      score ++;
+      if(!p1.getMajor().equals(p2.getMajor())) {
+         score += 2;
+      }
+      if(p1.getReligion().equals(p2.getReligion())) {
+         score++;
+      }
+      if(p1.getSubstances().equals(p2.getSubstances())) {
+         score++;
+      }
+      if(p1.getNoise().equals(p2.getNoise())) {
+         score++;
+      }
+      if(p1.getCleanliness().equals(p2.getCleanliness())) {
+         score++;
+      }
+      if(p1.getOrganizations().equals(p2.getOrganizations())) {
+         score++;
+      }
+      if(p1.getSleepTime().equals(p2.getSleepTime())) {
+         score++;
+      }
+
+      return score;
+   }
+ */
 
 /*
  ********************** PROTOTYPE 1 *************************
