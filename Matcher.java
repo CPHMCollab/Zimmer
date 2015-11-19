@@ -61,7 +61,7 @@ public class Matcher
    public ArrayList<String> getCommonCriteria(List<Criteria> p1, List<Criteria> p2) {   
       ArrayList<String> commons = new ArrayList<String>();
       for (Criteria c : p1) {
-         if (existsInOther(c.getName(), p2)) {
+         if (existsInList(c.getName(), p2)) {
             commons.add(c.getName());
          }
       }
