@@ -35,6 +35,7 @@ public Person
    public String getFirstName() { return this.first; }
    public String getLastName() { return this.last; }
    public String getEmail() { return this.email; }
+   public String getFullName() { return first + " " + last; }
    public ArrayList<Criteria> getPersonalCriteria() { return this.personal; }
    public ArrayList<Criteria> getExpectedCriteria() { return this.expected; }
    
