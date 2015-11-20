@@ -58,6 +58,23 @@ public class Matcher
       }
       return false;
    }
+   
+   /**
+    * Gets the criteria keyword 'name' if it exists in the list p
+    * @return criteria or null
+    */
+   public Criteria getInList(String name, List<Criteria> p)
+   {
+      for (Criteria c : p)
+      {
+         if (c.getName().equalsIgnoreCase(name))
+         {
+            return c;
+         }
+      }
+      return null;
+   }
+   
    /** Returns list of Criteria that can be evaluated (does p1 and p2 have same criteria) */
    public ArrayList<String> getCommonCriteria(List<Criteria> p1, List<Criteria> p2) {   
       ArrayList<String> commons = new ArrayList<String>();
@@ -71,6 +88,7 @@ public class Matcher
 
    /**Given 2 'Person', find the sum score of both people, where each person's score is
     * calculated by Person1's personal evaluation to Person2's expected critera. */
+   // We are currently returning the percentage of compatibility between the two people. We COULD just return the totalScore which would be a bigger number, then we would have to calculate the percentage of compatibility later which is wouldn't be a problem.
    public static int findMatchFactor(Person p1, Person p2) {
       // Given: P1, P2
       //
@@ -82,25 +100,40 @@ public class Matcher
       // P2CriteriaScoreN = ((SCALE - Math.abs(P2.Expected - P1.Personal)) * MULTIPLIER) * P2.CriteriaNPercentage)
       // P2Score = P2CriteriaScore1 + P2CriteriaScore2 + ... + P2CriteriaScoreN
       //
-      // MatchScore = P1Score + P2Score
+      // totalScore = P1Score + P2Score
+      //
+      // return totalScore / PERFECT_SCORE --> percentage of compatibility
       
-      ArrayList<String> commonCrit1 = getCommonCriteria(p1.getPersonalCriteria(), p2.getExpectedCriteria());
-      ArrayList<String> commonCrit2 = getCommonCriteria(p1.getExpectedCriteria(), p2.getPersonalCriteria());
+      ArrayList<String> commonCrit1 = getCommonCriteria(p1.getExpectedCriteria(), p2.getPersonalCriteria());
+      ArrayList<String> commonCrit2 = getCommonCriteria(p1.getPersonalCriteria(), p2.getExpectedCriteria());
       int p1Score = 0;
+      int p2Score = 0;
+      int totalScore = 0;
       
-      // Calculating P1's expected score with P2's personal criteria
+      // Calculating score - P1's expected criteria with P2's personal criteria
       for (String crit : commonCrit1)
       {
-         for (Criteria c : p1.getPersonalCriteria())
-         {
-            if (c.getName().equalsIgnoreCase(crit))
-            {
-               p1Score += ((SCALE - Math.abs(/* somehow need to get p2's criteria value */)))
-            }
-         }
+         // criteria guaranteed not to be null because common attributes were found by getCommonCriteria()
+         Criteria c1 = getInList(crit, p1.getExpectedCriteria);
+         Criteria c2 = getInList(crit, p2.getPersonalCriteria);
+         
+         p1Score += ((SCALE - Math.abs(c1.getScore() - c2.getScore())) * MULTIPLIER) * c1.getPercentageWeight();
       }
       
-      int score = 1;
+      // Calculating score - P2's expected criteria with P1's personal criteria
+      for (String crit : commonCrit2)
+      {
+         // criteria guaranteed not to be null because common attributes were found by getCommonCriteria()
+         Criteria c1 = getInList(crit, p1.getPersonalCriteria);
+         Criteria c2 = getInList(crit, p2.getExpectedCriteria);
+         
+         p2Score += ((SCALE - Math.abs(c1.getScore() - c2.getScore())) * MULTIPLIER) * c2.getPercentageWeight();
+      }
+      
+      totalScore = p1Score + p2Score;
+      
+      // We are currently returning the percentage of compatibility between the two people
+      return totalScore / PERFECT_SCORE;
    }
 
 
