@@ -3,7 +3,12 @@
 import java.io.*;
 import java.util.*;
 
-
+/**
+ * A person, his contact info, and a list of both his personal evaluation of Criteria and
+ * expected values from his potential roommate.
+ * Note: This implementation does not require a person to fill out all Criteria. Matching pairs
+ * will be judged on what two potential roommates have both filled out.
+ */
 public Person 
 {
    // [INSTANCE VARIABLES]
