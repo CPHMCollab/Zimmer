@@ -7,7 +7,7 @@
       {
          "name":"noise",
          "percentageWeight":20,
-         "score":5,
+         "score":0,
          "expected":4
       },
       {

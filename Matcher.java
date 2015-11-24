@@ -56,7 +56,7 @@ public class Matcher
    // have the criterion return 0 if either person A's expected score or person 
    // B's own score is null
    public static int calcScore(Criterion exp, Criterion own) {
-      if (exp.getExpected() != -1 && own.getScore() != -1) {
+      if (exp.getExpected() > 0 && own.getScore() > 0) {
          return ((SCALE - Math.abs(exp.getExpected() - own.getScore()))) 
           * exp.getPercentageWeight(); 
       }
@@ -73,8 +73,7 @@ public class Matcher
       
       // Loop through every criterion to calculate the match score between the 
       //  two people
-      for (int i = 0; i < numCriteria; i++)
-      {
+      for (int i = 0; i < numCriteria; i++) {
          p1Score += calcScore(p1.getCriterionAt(i), p2.getCriterionAt(i));
          p2Score += calcScore(p2.getCriterionAt(i), p1.getCriterionAt(i));
       }
