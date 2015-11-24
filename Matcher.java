@@ -26,21 +26,25 @@ public class Matcher
       String line;
       BufferedReader JsonBR;
       ParsedData pd;
-      // Initiate empty root node for tree
-      TreeNode root = new TreeNode(null, null, -1, 0, null);
-      TreeNode goal;
-      // Add all people (JSON files) as 'People' object
-      while ((line = fileListBR.readLine()) != null) {
-         JsonBR = new BufferedReader(new FileReader(line));
-         pd = gson.fromJson(JsonBR, ParsedData.class);
-         people.add(pd.createPerson());
-      }
-      // Insert people into the tree
-      goal = buildTree(root, people);
       
-      System.out.println("Roommate pairs:");
-      printBacktrace(goal);
-      System.out.println("Sum of all match scores: " + goal.getSum());
+      JsonBR = new BufferedReader("json/eschen.json");
+      pd = gson.fromJson(JsonBR, ParsedData.class);
+      System.out.println(pd);
+      // Initiate empty root node for tree
+      // TreeNode root = new TreeNode(null, null, -1, 0, null);
+      // TreeNode goal;
+      // Add all people (JSON files) as 'People' object
+      // while ((line = fileListBR.readLine()) != null) {
+      //    JsonBR = new BufferedReader(new FileReader(line));
+      //    pd = gson.fromJson(JsonBR, ParsedData.class);
+      //    people.add(pd.createPerson());
+      // }
+      // Insert people into the tree
+      // goal = buildTree(root, people);
+      
+      // System.out.println("Roommate pairs:");
+      // printBacktrace(goal);
+      // System.out.println("Sum of all match scores: " + goal.getSum());
    }
    
    // *************************************************************************
