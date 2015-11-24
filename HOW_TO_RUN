@@ -1,0 +1,9 @@
+Run this command in the terminal. There needs to be a CLASSPATH so the compiler knows what "Gson" is 
+> export CLASSPATH=gson-2.4.jar
+
+Compile it
+> javac *.java
+
+Run it with this command
+> java -cp gson-2.4.jar:./ Matcher
+
