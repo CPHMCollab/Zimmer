@@ -1,0 +1,26 @@
+{
+   "timestamp": "createdUsingAPythonScript", 
+   "firstname": "Chris", 
+   "lastname": "Cox", 
+   "email": "C.Cox@calpoly.edu", 
+   "criteria": [
+      {
+         "name": "cleanliness", 
+         "percentageWeight": 94, 
+         "score": 6, 
+         "expected": 9
+      }, 
+      {
+         "name": "noise", 
+         "percentageWeight": 3, 
+         "score": 9, 
+         "expected": 5
+      }, 
+      {
+         "name": "sleepTime", 
+         "percentageWeight": 3, 
+         "score": 10, 
+         "expected": 4
+      }
+   ]
+}
