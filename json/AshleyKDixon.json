@@ -1,0 +1,26 @@
+{
+   "timestamp": "createdUsingAPythonScript", 
+   "firstname": "Ashley", 
+   "lastname": "Dixon", 
+   "email": "A.Dixon@calpoly.edu", 
+   "criteria": [
+      {
+         "name": "cleanliness", 
+         "percentageWeight": 100, 
+         "score": 10, 
+         "expected": 1
+      }, 
+      {
+         "name": "noise", 
+         "percentageWeight": 0, 
+         "score": 6, 
+         "expected": 0
+      }, 
+      {
+         "name": "sleepTime", 
+         "percentageWeight": 0, 
+         "score": 4, 
+         "expected": 0
+      }
+   ]
+}
