@@ -5,10 +5,22 @@
    "email": "eschen@calpoly.edu",
    "criteria": [
       {
-         "name":"c1",
+         "name":"noise",
          "percentageWeight":20,
          "score":4,
          "expected":5
+      },
+      {
+         "name":"cleanliness",
+         "percentageWeight":20,
+         "score":8,
+         "expected":9
+      },
+      {
+         "name":"sleepTime",
+         "percentageWeight":60,
+         "score":7,
+         "expected":4
       }
    ]
 }

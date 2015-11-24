@@ -15,6 +15,7 @@ public class Matcher
    /** The scale range used to calculate score */
    public static final int SCALE = 10;
    public static final int MULTIPLIER = 100;
+   public static final int PERFECT_SCORE = SCALE * MULTIPLIER * 2;
    /**
     * Creates a tree with empty root node, 
     */
@@ -27,7 +28,7 @@ public class Matcher
       BufferedReader JsonBR;
       ParsedData pd;
       
-      JsonBR = new BufferedReader("json/eschen.json");
+      JsonBR = new BufferedReader(new FileReader("json/eschen.json"));
       pd = gson.fromJson(JsonBR, ParsedData.class);
       System.out.println(pd);
       // Initiate empty root node for tree
@@ -54,16 +55,16 @@ public class Matcher
    // [HELPER]
    // Calculate the match score of both persons for the given criteria if both have the criterion
    // return 0 if either person A's expected score or person B's own score is null
-   public int calcScore(Criterion exp, Criterion own) {
-      if (exp.getExpected() && own.getScore()) {
-         return ((SCALE - Math.abs(exp.getExpected() - own.getScore())) * MULTIPLIER) * exp.getPercentageWeight(); 
+   public static int calcScore(Criterion exp, Criterion own) {
+      if (exp.getExpected() != -1 && own.getScore() != -1) {
+         return ((SCALE - Math.abs(exp.getExpected() - own.getScore()))) * exp.getPercentageWeight(); 
       }
       return 0;
    }
    
    // Calculates the compatibility score between the two people given
    // returns a percentage between 0-100 (e.g. 65.72% match score -> 65.72)
-   public double findMatchScore(Person p1, Person p2)
+   public static int findMatchScore(Person p1, Person p2)
    {
       int p1Score = 0;
       int p2Score = 0;
@@ -77,7 +78,7 @@ public class Matcher
       }
       
       // return the percent compatibility between the two people
-      return ((double)(p1Score + p2Score) / PERFECT_SCORE) * 100;
+      return (int)(((double)(p1Score + p2Score) / PERFECT_SCORE) * 100);
    }
 
 
@@ -96,7 +97,7 @@ public class Matcher
       TreeNode goal = null, temp;
       for (int i = 1; i < current.size(); i++) {
          cur = current.get(i);
-         score = findMatchFactor(p, cur);
+         score = findMatchScore(p, cur);
          n = new TreeNode(p, cur, score, parent.getSum() + score, parent);
          parent.addChild(n);
          newList = new ArrayList<Person>(current);
@@ -114,7 +115,6 @@ public class Matcher
       }
       return goal;
    }
-   face
    
    public static void printBacktrace(TreeNode goal) {
       TreeNode n = goal;

@@ -9,7 +9,7 @@ import java.util.*;
  * Note: This implementation does not require a person to fill out all Criteria. Matching pairs
  * will be judged on what two potential roommates have both filled out.
  */
-public Person 
+public class Person 
 {
    // [INSTANCE VARIABLES]
    private String first;
@@ -39,6 +39,9 @@ public Person
    public String getEmail() { return this.email; }
    public String getFullName() { return first + " " + last; }
    public ArrayList<Criterion> getCriteria() { return this.criteria; }
+   public Criterion getCriterionAt(int index) {
+      return criteria.get(index);
+   }
    
    // 'Set' Methods
    public void setFirstName(String fn) { this.first = fn; }
