@@ -1,0 +1,26 @@
+{
+   "timestamp": "thymetogetawatch",
+   "firstname": "Alex",
+   "lastname": "Cava",
+   "email": "acava@calpoly.edu",
+   "criteria": [
+      {
+         "name":"noise",
+         "percentageWeight":50,
+         "score":3,
+         "expected":8
+      },
+      {
+         "name":"cleanliness",
+         "percentageWeight":40,
+         "score":2,
+         "expected":7
+      },
+      {
+         "name":"sleepTime",
+         "percentageWeight":10,
+         "score":9,
+         "expected":7
+      }
+   ]
+}

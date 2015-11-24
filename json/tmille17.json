@@ -1,0 +1,26 @@
+{
+   "timestamp": "thymetogetawatch",
+   "firstname": "Tiffany",
+   "lastname": "Miller",
+   "email": "tmille17@calpoly.edu",
+   "criteria": [
+      {
+         "name":"noise",
+         "percentageWeight":20,
+         "score":5,
+         "expected":4
+      },
+      {
+         "name":"cleanliness",
+         "percentageWeight":20,
+         "score":9,
+         "expected":8
+      },
+      {
+         "name":"sleepTime",
+         "percentageWeight":60,
+         "score":4,
+         "expected":7
+      }
+   ]
+}

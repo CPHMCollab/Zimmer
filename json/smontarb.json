@@ -1,0 +1,26 @@
+{
+   "timestamp": "thymetogetawatch",
+   "firstname": "Samantha",
+   "lastname": "Montarbo",
+   "email": "smontarb@calpoly.edu",
+   "criteria": [
+      {
+         "name":"noise",
+         "percentageWeight":60,
+         "score":3,
+         "expected":5
+      },
+      {
+         "name":"cleanliness",
+         "percentageWeight":10,
+         "score":3,
+         "expected":3
+      },
+      {
+         "name":"sleepTime",
+         "percentageWeight":30,
+         "score":8,
+         "expected":7
+      }
+   ]
+}
