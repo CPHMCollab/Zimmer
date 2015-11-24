@@ -15,24 +15,21 @@ public Person
    private String first;
    private String last;
    private String email;
-   private ArrayList<Criteria> personal;
-   private ArrayList<Criteria> expected;
+   private ArrayList<Criterion> criteria;
    
    // [CONSTRUCTORS]
    public Person() 
    {
-      personal = new ArrayList<Criteria>();
-      expected = new ArrayList<Criteria>();
+      criteria = new ArrayList<Criterion>();
    }
    
    public Person(String first, String last, String email, 
-    ArrayList<Criteria> pList, ArrayList<Criteria> eList)
+    ArrayList<Criterion> crit)
    {
       this.first = first;
       this.last = last;
       this.email = email;
-      this.personal = pList;
-      this.expected = eList;
+      this.criteria = crit;
    }
    
    // [METHODS]
@@ -41,8 +38,7 @@ public Person
    public String getLastName() { return this.last; }
    public String getEmail() { return this.email; }
    public String getFullName() { return first + " " + last; }
-   public ArrayList<Criteria> getPersonalCriteria() { return this.personal; }
-   public ArrayList<Criteria> getExpectedCriteria() { return this.expected; }
+   public ArrayList<Criterion> getCriteria() { return this.criteria; }
    
    // 'Set' Methods
    public void setFirstName(String fn) { this.first = fn; }
@@ -50,30 +46,30 @@ public Person
    public void setEmail(String e) { this.email = e; }
    
    // Checks if a criteria exists in the Personal list of Criteria
-   public boolean existsInPersonal(Criteria crit)
-   {
-      for (Criteria c : this.personal)
-      {
-         if (c.getName().equalsIgnoreCase(crit.getName()))
-         {
-            return true;
-         }
-      }   
-      return false;
-   }
+   // public boolean existsInPersonal(Criterion crit)
+   // {
+   //    for (Criteria c : this.personal)
+   //    {
+   //       if (c.getName().equalsIgnoreCase(crit.getName()))
+   //       {
+   //          return true;
+   //       }
+   //    }   
+   //    return false;
+   // }
    
    // Checks if a criteria exists in the Expected list of Criteria
-   public boolean existsInExpected(Criteria crit)
-   {
-      for (Criteria c : this.expected)
-      {
-         if (c.getName().equalsIgnoreCase(crit.getName()))
-         {
-            return true;
-         }
-      }
-      return false;
-   }
+   // public boolean existsInExpected(Criteria crit)
+   // {
+   //    for (Criteria c : this.expected)
+   //    {
+   //       if (c.getName().equalsIgnoreCase(crit.getName()))
+   //       {
+   //          return true;
+   //       }
+   //    }
+   //    return false;
+   // }
 }
 
 
