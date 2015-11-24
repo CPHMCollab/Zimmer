@@ -1,14 +1,26 @@
 {
-   "timestamp": "kdsjfhksdf",
+   "timestamp": "thymetogetawatch",
    "firstname": "Colleen",
    "lastname": "McCann",
    "email": "ckmccann@calpoly.edu",
-   "gender": "Female",
-   "major": "COSAM",
-   "religion": "nonreligious",
-   "substances": true,
-   "noise": 4,
-   "organizations": ["Club","Greek","ROTC"],
-   "cleanliness": 8,
-   "sleeptime": 23
+   "criteria": [
+      {
+         "name":"noise",
+         "percentageWeight":10,
+         "score":5,
+         "expected":6
+      },
+      {
+         "name":"cleanliness",
+         "percentageWeight":10,
+         "score":6,
+         "expected":8
+      },
+      {
+         "name":"sleepTime",
+         "percentageWeight":80,
+         "score":2,
+         "expected":2
+      }
+   ]
 }

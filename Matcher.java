@@ -7,7 +7,8 @@ import java.io.*;
 import java.util.*;
 import com.google.gson.*;
 /**
- * Main class that the best set of pairs with the goal of least deviation between all pairs.
+ * Main class that the best set of pairs with the goal of least deviation 
+ * between all pairs.
  */
 public class Matcher
 {
@@ -28,24 +29,22 @@ public class Matcher
       BufferedReader JsonBR;
       ParsedData pd;
       
-      JsonBR = new BufferedReader(new FileReader("json/eschen.json"));
-      pd = gson.fromJson(JsonBR, ParsedData.class);
-      System.out.println(pd);
       // Initiate empty root node for tree
-      // TreeNode root = new TreeNode(null, null, -1, 0, null);
-      // TreeNode goal;
+      TreeNode root = new TreeNode(null, null, -1, 0, null);
+      TreeNode goal;
       // Add all people (JSON files) as 'People' object
-      // while ((line = fileListBR.readLine()) != null) {
-      //    JsonBR = new BufferedReader(new FileReader(line));
-      //    pd = gson.fromJson(JsonBR, ParsedData.class);
-      //    people.add(pd.createPerson());
-      // }
+      while ((line = fileListBR.readLine()) != null) {
+         JsonBR = new BufferedReader(new FileReader(line));
+         pd = gson.fromJson(JsonBR, ParsedData.class);
+         people.add(pd.createPerson());
+      }
       // Insert people into the tree
-      // goal = buildTree(root, people);
+      goal = buildTree(root, people);
       
-      // System.out.println("Roommate pairs:");
-      // printBacktrace(goal);
-      // System.out.println("Sum of all match scores: " + goal.getSum());
+      System.out.println("Roommate pairs:");
+      printBacktrace(goal);
+      System.out.println("Average match score: " 
+       + (int)((double)goal.getSum() / ((double)people.size() / 2)));
    }
    
    // *************************************************************************
@@ -53,11 +52,13 @@ public class Matcher
    // *************************************************************************
    
    // [HELPER]
-   // Calculate the match score of both persons for the given criteria if both have the criterion
-   // return 0 if either person A's expected score or person B's own score is null
+   // Calculate the match score of both persons for the given criteria if both 
+   // have the criterion return 0 if either person A's expected score or person 
+   // B's own score is null
    public static int calcScore(Criterion exp, Criterion own) {
       if (exp.getExpected() != -1 && own.getScore() != -1) {
-         return ((SCALE - Math.abs(exp.getExpected() - own.getScore()))) * exp.getPercentageWeight(); 
+         return ((SCALE - Math.abs(exp.getExpected() - own.getScore()))) 
+          * exp.getPercentageWeight(); 
       }
       return 0;
    }
@@ -70,7 +71,8 @@ public class Matcher
       int p2Score = 0;
       int numCriteria = p1.getCriteria().size();
       
-      // Loop through every criterion to calculate the match score between the two people
+      // Loop through every criterion to calculate the match score between the 
+      //  two people
       for (int i = 0; i < numCriteria; i++)
       {
          p1Score += calcScore(p1.getCriterionAt(i), p2.getCriterionAt(i));
@@ -87,7 +89,8 @@ public class Matcher
    // *************************************************************
    //
    /**
-    * Recursively builds tree while tracking the best Person to pair for the subject Person's tree.
+    * Recursively builds tree while tracking the best Person to pair for the 
+    * subject Person's tree.
     */
    public static TreeNode buildTree(TreeNode parent, List<Person> current) {
       TreeNode n;
