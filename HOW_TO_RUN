@@ -5,5 +5,5 @@ Compile it
 > javac *.java
 
 Run it with this command
-> java -cp gson-2.4.jar:./ Matcher
+> java -cp gson-2.4.jar:./ Zimmer
 
