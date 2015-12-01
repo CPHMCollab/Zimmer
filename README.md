@@ -1,6 +1,4 @@
-#Zimmer
-
-###This is the project library for our matching API.
+#Project Zimmer
 
 #####Contributors:
 ######Kevin Tsui
@@ -10,7 +8,20 @@
 ######Kyle Cornelison
 
 
-##Matcher.java
+
+##Class Descriptions
+
+###Matcher.java
+The matcher class contains the bulk of the Matching algorithm, which consists
+of two main functions that are described below.
+
+###Zimmer.java
+
+###ParsedData.java
+
+###Person.java
+
+###Criterion.java
 
 
 
