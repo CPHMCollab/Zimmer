@@ -12,14 +12,6 @@ import com.google.gson.*;
  */
 public class Zimmer
 {
-   // MAGIC NUMBERS
-   /** The scale range used to calculate score */
-   public static final int SCALE = 10;
-   public static final int MULTIPLIER = 100;
-   public static final int PERFECT_SCORE = SCALE * MULTIPLIER * 2;
-   /**
-    * Creates a tree with empty root node, 
-    */
    public static void main(String[] args) throws IOException {
       Gson gson = new Gson();
       ArrayList<Person> people = new ArrayList<Person>();
