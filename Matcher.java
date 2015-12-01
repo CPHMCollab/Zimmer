@@ -24,7 +24,7 @@ public class Matcher
     * have the criterion. return 0 if either person A's expected score or person
     * B's own score is null
     */
-   public static int calcScore(Criterion exp, Criterion own) {
+   private static int calcScore(Criterion exp, Criterion own) {
       if (exp.getExpected() > 0 && own.getScore() > 0) {
          return ((SCALE - Math.abs(exp.getExpected() - own.getScore()))) 
           * exp.getPercentageWeight(); 
@@ -58,11 +58,16 @@ public class Matcher
    // * Methods related to Tree building/finding optimal solution *
    // *************************************************************
    //
+   
+   public static TreeNode findMatchInGroup(List<Person> people) {
+      return buildTree(new TreeNode(null, null, -1, 0, null), people);
+   }
+   
    /**
     * Recursively builds tree while tracking the best Person to pair for the 
     * subject Person's tree.
     */
-   public static TreeNode buildTree(TreeNode parent, List<Person> current) {
+   private static TreeNode buildTree(TreeNode parent, List<Person> current) {
       TreeNode n;
       Person p = current.get(0), cur;
       List<Person> newList;

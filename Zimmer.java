@@ -28,7 +28,6 @@ public class Zimmer
       String line;
       BufferedReader JsonBR;
       ParsedData pd;
-      TreeNode root = new TreeNode(null, null, -1, 0, null);
       TreeNode goal;
 
       // Add all people (JSON files) as 'People' object
@@ -38,7 +37,7 @@ public class Zimmer
          people.add(pd.createPerson());
       }
       // Insert people into the tree
-      goal = Matcher.buildTree(root, people);
+      goal = Matcher.findMatchInGroup(people);
       
       System.out.println("Roommate pairs:");
       Matcher.printBacktrace(goal);
