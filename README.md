@@ -33,8 +33,10 @@ parsing worked for us, so we used it in our Zimmer program, but it is by no
 means the only way of creating a list of Person objects to use.
 
 Take note of the conventions listed in the **bulleted lists** below (under the
-Person.java and Criterion.java subheaders). These conventions are essential to
-the Matching library functioning properly.
+[Person.java](https://github.com/CPHMCollab/Zimmer#personjava) and 
+[Criterion.java](https://github.com/CPHMCollab/Zimmer#criterionjava) 
+subheaders). These conventions are essential to the Matching library functioning
+properly.
 
 ##Class Descriptions
 
