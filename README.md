@@ -1,13 +1,38 @@
 #Project Zimmer
 
-#####Contributors:
-######Kevin Tsui
-######Anusha Praturu
-######Eva Chen
-######Daniel Shu
-######Kyle Cornelison
+######Contributors:
+Kevin Tsui
+Anusha Praturu
+Eva Chen
+Daniel Shu
+Kyle Cornelison
 
+##How to Run Zimmer (test driver)
 
+1. Make sure that `gson-2.4.jar` is in the directory in which you intend to
+   run the driver as well as all `.java` files in this repository.
+2. Also ensure that your directory contains a folder labeled `json` and that
+   all user `.json` files are contained within this folder.
+3. Make sure that there is a file called `FileList.txt` in your directory
+   that contains all the file names that are contained in the `json` folder.
+4. Set the `$CLASSPATH` variable by running the following command:
+   > `export CLASSPATH=gson-2.4.jar`
+5. Compile the `.java` files:
+   > `javac *.java`
+6. Run the program with the following command:
+   > `java -cp gson-2.4.jar:./ Zimmer`
+
+##Creating your own driver that uses this Matching library
+If you create your own program that utilizes this Matching library, there are a
+few things to keep in mind, most of which are outlined in the class descriptions
+below.
+However you decide to gather user data, it is important that the data structures
+fed into the Matcher methods follow the conventions below. We found that JSON
+parsing worked for us, so we used it in our Zimmer program, but it is by no
+means the only way of creating a list of Person objects to use.
+Take note of the conventions listed in the **bulleted lists** below (under the
+Person.java and Criterion.java subheaders). These conventions are essential to
+the Matching library functioning properly.
 
 ##Class Descriptions
 
