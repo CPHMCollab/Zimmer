@@ -1,11 +1,11 @@
 #Project Zimmer
 
 ######Contributors:
-Kevin Tsui
-Anusha Praturu
-Eva Chen
-Daniel Shu
-Kyle Cornelison
+* Kevin Tsui
+* Anusha Praturu
+* Eva Chen
+* Daniel Shu
+* Kyle Cornelison
 
 ##How to Run Zimmer (test driver)
 
