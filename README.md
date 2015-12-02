@@ -26,10 +26,12 @@
 If you create your own program that utilizes this Matching library, there are a
 few things to keep in mind, most of which are outlined in the class descriptions
 below.
+
 However you decide to gather user data, it is important that the data structures
 fed into the Matcher methods follow the conventions below. We found that JSON
 parsing worked for us, so we used it in our Zimmer program, but it is by no
 means the only way of creating a list of Person objects to use.
+
 Take note of the conventions listed in the **bulleted lists** below (under the
 Person.java and Criterion.java subheaders). These conventions are essential to
 the Matching library functioning properly.
