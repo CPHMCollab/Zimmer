@@ -16,11 +16,11 @@
 3. Make sure that there is a file called `FileList.txt` in your directory
    that contains all the file names that are contained in the `json` folder.
 4. Set the `$CLASSPATH` variable by running the following command:
-> `export CLASSPATH=gson-2.4.jar`
+  > `export CLASSPATH=gson-2.4.jar`
 5. Compile the `.java` files:
-> `javac *.java`
+  > `javac *.java`
 6. Run the program with the following command:
-> `java -cp gson-2.4.jar:./ Zimmer`
+  > `java -cp gson-2.4.jar:./ Zimmer`
 
 ##Creating your own driver that uses this Matching library
 If you create your own program that utilizes this Matching library, there are a
