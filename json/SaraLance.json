@@ -1,0 +1,26 @@
+{
+   "timestamp": "fromArrow", 
+   "firstname": "Sara", 
+   "lastname": "Lance", 
+   "email": "whydidIgetonthatboat@calpoly.edu", 
+   "criteria": [
+      {
+         "name": "cleanliness", 
+         "percentageWeight": 25, 
+         "score": 6, 
+         "expected": 10
+      }, 
+      {
+         "name": "noise", 
+         "percentageWeight": 20, 
+         "score": 3, 
+         "expected": 7
+      }, 
+      {
+         "name": "sleepTime", 
+         "percentageWeight": 55, 
+         "score": 3, 
+         "expected": 2
+      }
+   ]
+}

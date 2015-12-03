@@ -1,0 +1,26 @@
+{
+   "timestamp": "fromArrow", 
+   "firstname": "Oliver", 
+   "lastname": "Queen", 
+   "email": "TheGreenArrow@calpoly.edu", 
+   "criteria": [
+      {
+         "name": "cleanliness", 
+         "percentageWeight": 55, 
+         "score": 5, 
+         "expected": 4
+      }, 
+      {
+         "name": "noise", 
+         "percentageWeight": 10, 
+         "score": 3, 
+         "expected": 5
+      }, 
+      {
+         "name": "sleepTime", 
+         "percentageWeight": 55, 
+         "score": 10, 
+         "expected": 10
+      }
+   ]
+}

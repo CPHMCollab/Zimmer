@@ -1,0 +1,26 @@
+{
+   "timestamp": "fromArrow", 
+   "firstname": "John", 
+   "lastname": "Diggle", 
+   "email": "Digg@calpoly.edu", 
+   "criteria": [
+      {
+         "name": "cleanliness", 
+         "percentageWeight": 40, 
+         "score": 4, 
+         "expected": 4
+      }, 
+      {
+         "name": "noise", 
+         "percentageWeight": 10, 
+         "score": 4, 
+         "expected": 5
+      }, 
+      {
+         "name": "sleepTime", 
+         "percentageWeight": 50, 
+         "score": 10, 
+         "expected": 9
+      }
+   ]
+}
